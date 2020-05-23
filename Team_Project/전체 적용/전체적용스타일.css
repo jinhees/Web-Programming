@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
+
+  .TopBar{
+    width : 1530px;
+    margin : 0 auto;
+    background-color: #58ACFA;
+
+    /* background-color: skyBlue;
+    background-image: url('/Team_Project/바다1.jpeg');*/
+  }
+
+  .Logo, .betweenHidden, .MainMenu{
+    display: inline-block;
+    vertical-align: top;
+    height: 100px;
+    margin : 0 auto;
+    text-align: center;
+  }
+  .Logo{
+    width : 18%;
+    font-family: 'Lemonada', cursive;
+    background-color: #58ACFA;
+
+  }
+  .betweenHidden{
+    width : 16%;
+    visibility: hidden;
+  }
+  .MainMenu{
+    width : 65%;
+    font-size: 18px;
+    font-weight:bold;
+    background-color: #58ACFA;
+    font-family: Georgia, "NanumGothic" ,"Batang", serif;
+  }
+  .MainMenu > ul{
+    margin-top: 0;
+  }
+  .MainMenu > ul > li{
+    float: left;
+    width: 20%;
+    height: 100%;
+    line-height: 100px;
+    list-style: none;
+  }
+  .MainMenu > ul > li > a{
+    display: block;
+    color: white;
+    text-decoration:  none;
+  }
+  .MainMenu > ul > li > a:hover{
+    background-color: yellow;
+    color : black;
+  }
+  .MainMenu > ul > li:hover > .SubMenu{
+    position: absolute;
+    visibility: visible;
+  }
+  .SubMenu{
+    border: 1px solid white;
+    list-style: none;
+    text-align: center;
+    padding-left: 0;
+    margin-left: 1px;
+    width: 190px;
+    visibility: hidden;
+    background-color:  skyblue;
+  }
+  .SubMenu > li > a{
+    display: block;
+    color: white;
+    text-decoration:  none;
+  }
+  .SubMenu > li > a:hover{
+    background-color: yellow;
+    color : black;
+  }
+
+
+  .Frame{
+    width : 1530px;
+    margin  : auto;
+    /* background-image: url('/Team_Project/바다1.jpeg'); */
+    background-color: #58ACFA;
+  }
+  .Left_side,.Right_side,.Content{
+    height: 700px;
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+  }
+  .Left_side{
+    background-image: url('left.PNG');
+  }
+  .Right_side{
+    background-image: url('right.PNG');
+  }
+  .Left_side,.Right_side{
+    width : 18%;
+  }
+  .Content{
+    width : 63%;
+    text-align: center;
+    background-color: white;
+  }
+
+  .Footer{
+    width: 1530px;
+    height: 100px;
+    margin : auto;
+    background-image: url('바닥.jpg');
+  }
