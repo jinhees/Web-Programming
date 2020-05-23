@@ -1,12 +1,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Lemonada:wght@300&display=swap');
 
+
+
+/*E-Ticket 구매*/
+  .BOX{
+    width: 600px;
+    height: 250px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid gray;
+    margin: 0 auto;
+  }
+  .BOX2{
+    width: 600px;
+    height: 800px;
+    background-color: white;
+    padding: 20px;
+    border: 1px solid gray;
+    margin: 0 auto;
+  }
+
+/*전체적용 스타일*/
   .TopBar{
     width : 1530px;
     margin : 0 auto;
     background-color: #58ACFA;
-
-    /* background-color: skyBlue;
-    background-image: url('/Team_Project/바다1.jpeg');*/
   }
 
   .Logo, .betweenHidden, .MainMenu{
@@ -49,7 +67,7 @@
     text-decoration:  none;
   }
   .MainMenu > ul > li > a:hover{
-    background-color: yellow;
+    background-color: white;
     color : black;
   }
   .MainMenu > ul > li:hover > .SubMenu{
@@ -72,7 +90,7 @@
     text-decoration:  none;
   }
   .SubMenu > li > a:hover{
-    background-color: yellow;
+    background-color: #CEE3F6;
     color : black;
   }
 
@@ -80,7 +98,6 @@
   .Frame{
     width : 1530px;
     margin  : auto;
-    /* background-image: url('/Team_Project/바다1.jpeg'); */
     background-color: #58ACFA;
   }
   .Left_side,.Right_side,.Content{
