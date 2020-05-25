@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <title>E-ticket 구매</title>
+    <link rel="stylesheet" type="text/css" href="전체적용스타일.css">
+
+
+  </head>
+
+  <body>
+
+  <!-- <script type="text/javascript" src="E-ticket\ticketprice.js"></script> -->
+
+  <div class="TopBar">
+    <header class="Logo">
+      <h1>AQUA-KOREA</h1>
+    </header>
+    <div class="betweenHidden">
+    </div>
+    <nav class="MainMenu">
+      <ul>
+        <li><a href="#">AQUA-KOREA</a>
+          <ul class ="SubMenu">
+            <li><a href="#">AQUA-KOREA 소개</a></li>
+            <li><a href="#">층별전시안내</a></li>
+            <li><a href="#">운영시간</a></li>
+            <li><a href="#">오시는 길</a></li>
+          </ul>
+        </li>
+        <li><a href="Program.html">프로그램/이벤트</a>
+          <ul class = "SubMenu">
+            <li><a href="Program.html">프로그램</a></li>
+            <li><a href="Event">이벤트</a></li>
+          </ul>
+        </li>
+        <li><a href="E-Ticket.html">온라인 예매</a>
+          <ul class = "SubMenu">
+            <li><a href="E-Ticket.html">온라인 예매</a></li>
+          </ul>
+        </li>
+        <li><a href="Group.html">단체</a>
+          <ul class = "SubMenu">
+            <li><a href="Group.html">단체 예약</a></li>
+          </ul>
+        </li>
+        <li><a href="#">고객의 소리</a>
+          <ul class = "SubMenu">
+            <li><a href="#">QnA</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+
+
+    <div class="Frame">
+
+      <aside class="Left_side"></aside>
+      <main class="Content">
+
+        <h2>E-ticket구매</h2>
+          <p>AQUA-KOREA의 입장권을 합리적인 가격으로 만나보세요!</p>
+          <hr>
+          <br><br>
+
+          <div class="BOX">
+            <img src="E-ticket/성인.jpg" alt="ICON IMAGE" width="600" height="250">
+            <h3>가격 : 28000 원</h3>
+            <form name="form" method="get">
+            수량 : <input type=hidden name="sell_price" value="28000">
+            <input type="text" name="amount" value="0" size="3" onchange="change();">
+            <input type="button" value=" + " onclick="add();"><input type="button" value=" - " onclick="del();"><br>
+
+            금액 : <input type="text" name="sum" size="11" readonly>원
+            </form>
+          </div>
+          <br><br>
+
+
+          <div class="BOX">
+            <img src="E-ticket/어린이.jpg" alt="ICON IMAGE" width="600" height="250">
+            <h3>가격 : 24000 원</h3>
+
+            <form name="form_k" method="get">
+            수량 : <input type=hidden name="sell_price_k" value="24000">
+            <input type="text" name="amount_k" value="0" size="3" onchange="change_k();">
+            <input type="button" value=" + " onclick="add_k();"><input type="button" value=" - " onclick="del_k();"><br>
+
+            금액 : <input type="text" name="sum_k" size="11" readonly>원
+            </form>
+          </div>
+          <br><br>
+
+          <button id="buttonbuy">구매하기</button>
+          <br><br>
+
+          <h2>모바일티켓 안내</h2>
+          <div class="BOX2">
+            <b>상품 구매 유의사항</b>
+            <br></br>
+            <ul>
+              <li>성인/ 청소년 만 13세 이상, 어린이는 36개월 이상~만 12세</li>
+              <li>구매 티켓은 구매 (당일)로 부터 30일 이내에 1회 사용이 가능합니다.</li>
+              <li>본 티켓은 구매일로부터 30일 이내에 1회 사용 가능 합니다.</li>
+              <li>재 입장 불가 ~ 36개월 미만 유아는 무료입장(증빙서류지참)</li>
+            </ul>
+            <br></br>
+            <b>취소/환불 안내</b>
+            <br></br>
+            <ul>
+              <li>구매 후 미사용건 한하여 7일이내 취소/환불 가능합니다.</li>
+              <li>권종 및 인원 변경 시 전체 취소 후 다시 구매하셔야 합니다. *부분취소 불가</li>
+            </ul>
+            <br></br>
+            <b>고객센터</b>
+            <br></br>
+            <ul>
+              <li>티켓의 취소, 재발송, 사용 문의는 고객센터로 문의주세요!</li>
+              <li>고객센터 안내 010) 5914 - 2655 / 010) 2665 - 5307</li>
+              <li>오전 10시 ~ 오후 8시까지 평일, 주말, 공휴일, 명절 등을 포함하여 1년 365일 운영됩니다.</li>
+            </ul>
+            <br></br>
+          </div>
+        <br><br><br>
+      </main>
+      <aside class="Right_side"></aside>
+
+    </div>
+
+    <footer class="Footer">
+    </footer>
+  </body>
+
+</html>
