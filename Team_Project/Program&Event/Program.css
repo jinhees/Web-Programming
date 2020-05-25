@@ -1,0 +1,13 @@
+.Program{
+  height: auto;
+}
+
+.Program > table{
+  width : 800px;
+  border : 1px solid gray;
+  margin : 0 auto;
+}
+
+.Program > tr,td{
+  border : 1px solid gray;
+}

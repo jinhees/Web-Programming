@@ -1,0 +1,30 @@
+.BOX{
+  width: 600px;
+  height : auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid gray;
+  margin: 0 auto;
+}
+
+.BOX2{
+  width: 600px;
+  height: auto;
+  background-color: white;
+  padding: 20px;
+  border: 1px solid gray;
+  margin: 0 auto;
+}
+#bt{
+  text-align: right;
+}
+
+
+#buttonbuy {
+    color:white;
+    background-color:skyblue;
+    font-size:1.5em;
+    border-radius:0.8em;
+    padding: 5px 20px;
+    border-color: cyan;
+}
