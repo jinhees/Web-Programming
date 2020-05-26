@@ -1,142 +1,258 @@
-﻿<!DOCTYPE html>
-
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Group</title>
+    <title>전체적용</title>
     <style>
-        table{
-            width : 60%;
-            height:200px;
-            margin:auto;
-            text-align:center;
+        .group {
+            width: 90%;
+            height: 300px;
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 1px;
+            text-align: left;
+            line-height: 1.5;
+            border-top: 1px solid #ccc;
         }
-        h1{
-            text-align:center;
-        }
+
+            .group th {
+                width: 100px;
+                padding: 10px;
+                font-weight: bold;
+                vertical-align: top;
+                border-bottom: 1px solid #ccc;
+                background: #D2E1FF;
+            }
+
+            .group td {
+                width: 500px;
+                padding: 10px;
+                vertical-align: top;
+                border-bottom: 1px solid #ccc;
+            }
     </style>
+    <script language="JavaScript">
+        function checkemailaddy() {
+            if (form.email_select.value == '1') {
+                form.email2.readOnly = false;
+                form.email2.value = '';
+                form.email2.focus();
+            }
+            else {
+                form.email2.readOnly = true;
+                form.email2.value = form.email_select.value;
+            }
+        }
+
+        function reservation(){
+            var form = document.form;
+            var 단체명= form.단체명.value;
+            var 예약자명 = form.예약자명.value;
+            var 휴대폰1 = form.휴대폰1.value;
+            var 휴대폰2 = form.휴대폰2.value;
+            var 이메일 = form.이메일.value;
+            var 이메일2 = form.email2.value;
+            var 방문시간 = form.방문시간.value;
+            var 관람인원_대인 = form.대인인원수.value;
+            var 관람인원_청소년 = form.청소년인원수.value;
+            var 관람인원_소인 = form.소인인원수.value;
+            var 관람인원_인솔교사 = form.인솔교사인원수.value;
+            var 추가사항 = form.추가사항.value;
+            if (!단체명 || !예약자명 || !휴대폰1 || !휴대폰2 || !이메일  || !방문시간 || !관람인원_대인 || !관람인원_청소년 || !관람인원_소인 || !관람인원_인솔교사) {
+                window.open("FailRes_popup.html", "예약실패", "width=400, height=300,left=800,top=50");
+            }else{
+                window.open("reservation_popup.html", "예약성공", "width=400, height=300,left=800,top=50");
+                form.submit();
+
+            }
+        }
+
+    </script>
+
+    <link rel="stylesheet" type="text/css" href="전체적용스타일.css">
 </head>
 
-<body style="text-align: center;">
-    <h1>AQUA-KOREA 단체 예약</h1>
-    <p>AQUA-KOREA 단체 예약 페이지입니다.</p>
-    <p>아래 양식에 맞게 예약 정보를 입력해주세요,</p>
-    <hr style="border: solid 1px black;">
-
-    <table>
-
-        <colgroup class="m_none">
-            <col style="width:50%;">
-            <col>
-        </colgroup>
-        <colgroup class="pc_none colgroup">
-            <col style="width:50%;">
-            <col>
-        </colgroup>
-
-        <tr>
-            <th><label for="단체명">단체명</label> </th>
-            <td>
-                <input type="text" id="단체명" name="단체명" placeholder="단체명" value="" maxlength="50" />
-                <br />
-            </td>
-        </tr>
-
-        <tr>
-            <th><label for="예약자명">예약자명</label></th>
-            <td>
-                <input type="text" id="예약자명" name="예약자명" placeholder="예약자명" value="" maxlength="25" />
-                <br />
-            </td>
-        </tr>
-
-        <tr>
-            <th><label for="휴대폰">휴대폰</label></th>
-            <td>
-                <select>
-                    <option>010</option>
-                    <option>011</option>
-                    <option>016</option>
-                    <option>017</option>
-                </select>
-                -
-                <input type="text" name="휴대폰1" value="" />
-                -
-                <input type="text" name="휴대폰2" value="" />
-                <br />
-            </td>
-        </tr>
-
-        <tr>
-            <th><label for="이메일">이메일</label></th>
-            <td>
-                <input type="text" id="이메일" name="이메일" placeholder="이메일" value="" />
-                @
-                <input type="text" id="이메일2" name="이메일2">
-                <select id="email_domain_pool">
-                    <option value="">직접입력</option>
-                    <option value="daum.net">daum.net</option>
-                    <option value="naver.com">naver.com</option>
-                    <option value="nate.com">nate.com</option>
-                    <option value="gmail.com">gmail.com</option>
-                </select>
-            </td>
-        </tr>
-
-        <tr>
-            <th><label for="방문시간">방문시간</label></th>
-            <td>
-                <input type="text" id="방문시간" name="방문시간" placeholder="yyyy-mm-dd형태로 입력하세요" " maxlength="50" />
-                <select id="VISIT_TIME">
-                    <option value='10'>10시</option>
-                    <option value='11'>11시</option>
-                    <option value='12'>12시</option>
-                    <option value='13'>13시</option>
-                    <option value='14'>14시</option>
-                    <option value='15'>15시</option>
-                    <option value='16'>16시</option>
-                    <option value='17'>17시</option>
-                    <option value='18'>18시</option>
-                </select>
-                <p>
-                    평일(월-목) 10시~19시 (관람가능 : 20시)<br>
-                    주말(금-일), 공휴일 09시~21시 (관람가능 : 22시)
-                </p>
-
-            </td>
-        </tr>
-
-        <tr>
-            <th><label for="관람인원">관람인원</label></th>
-            <td>
-                대인 <input type="text" id="대인인원수" name="대인인원수" value="" maxlength="3" />
-            </td>
-            <td>
-                청소년 <input type="text" id="청소년인원수" name="청소년인원수" value="" maxlength="3" />
-            </td>
-        </tr>
-        <tr>
-            <th></th>
-            <td>
-                소인 <input type="text" id="소인인원수" name="소인인원수" value="" maxlength="3" />
-            </td>
-            <td>
-                인솔교사 <input type="text" id="인솔교사인원수" name="인솔교사인원수" value="" maxlength="3" />
-            </td>
-        </tr>
-
-        <tr>
-            <th><label for"추가사항">추가사항</label></th>
-            <td>
-                <textarea id="추가사항" name="추가사항" rows="20" cols="70"></textarea>
-            </td>
-        </tr>
-
-    </table>
-
-    <button type="button" style="color:white; background-color:skyblue; font-size:1.5em; border-radius:0.8em; padding: 5px 20px;">
-        예약하기
-    </button>
+<body>
+    <div class="TopBar">
+        <header class="Logo">
+            <h1>AQUA-KOREA</h1>
+        </header>
+        <div class="betweenHidden">
+        </div>
+        <nav class="MainMenu">
+            <ul>
+                <li>
+                    <a href="#">AQUA-KOREA</a>
+                    <ul class="SubMenu">
+                        <li><a href="#">AQUA-KOREA 소개</a></li>
+                        <li><a href="#">층별전시안내</a></li>
+                        <li><a href="#">운영시간</a></li>
+                        <li><a href="#">오시는 길</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">프로그램/이벤트</a>
+                    <ul class="SubMenu">
+                        <li><a href="#">프로그램</a></li>
+                        <li><a href="#">이벤트</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">온라인 예매</a>
+                    <ul class="SubMenu">
+                        <li><a href="#">온라인 예매</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">단체</a>
+                    <ul class="SubMenu">
+                        <li><a href="#">단체 예약</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">고객의 소리</a>
+                    <ul class="SubMenu">
+                        <li><a href="#">QnA</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+    </div>
 
 
+    <div class="Frame">
+
+        <aside class="Left_side"></aside>
+        <main class="Content">
+            <h1>AQUA-KOREA 단체 예약</h1>
+            <p>AQUA-KOREA 단체 예약 페이지입니다.</p>
+            <p>아래 양식에 맞게 예약 정보를 입력해주세요,</p>
+            <hr style="border: solid 1px black;">
+
+            <form name="form" method="post">
+                <table class="group">
+
+                    <colgroup class="m_none">
+                        <col style="width:20%;">
+                        <col>
+                    </colgroup>
+                    <colgroup class="pc_none colgroup">
+                        <col style="width:50%;">
+                        <col>
+                    </colgroup>
+
+                    <tr>
+                        <th height="30" width="10"><label for="단체명">단체명</label> </th>
+                        <td>
+                            <input type="text" size="50" id="단체명" name="단체명" placeholder="단체명" value="" maxlength="50" />
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th height="30"><label for="예약자명">예약자명</label></th>
+                        <td>
+                            <input type="text" size="50" id="예약자명" name="예약자명" placeholder="예약자명" value="" maxlength="25" />
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th height="30"><label for="휴대폰">휴대폰</label></th>
+                        <td>
+                            <select>
+                                <option>010</option>
+                                <option>011</option>
+                                <option>016</option>
+                                <option>017</option>
+                            </select>
+                            -
+                            <input type="text" size="10" name="휴대폰1" value="" />
+                            -
+                            <input type="text" size="10" name="휴대폰2" value="" />
+                            <br />
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <th height="30"><label for="이메일">이메일</label></th>
+                        <td>
+                            <input type="text" id="이메일" name="이메일" placeholder="이메일" value="" />
+                            @
+                            <input name="email2" type="text" class="box" id="email2" size="20">
+                            <select name="email_select" class="box" id="email_select" onChange="checkemailaddy();">
+                                <option value="1">직접입력</option>
+                                <option value="daum.net">daum.net</option>
+                                <option value="naver.com">naver.com</option>
+                                <option value="nate.com">nate.com</option>
+                                <option value="gmail.com">gmail.com</option>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th><label for="방문날짜">방문날짜</label></th>
+                        <td>
+                            <input type="text" size="30" id="방문시간" name="방문시간" placeholder="yyyy-mm-dd형태로 입력하세요" " maxlength="10" />
+                            <select id="VISIT_TIME">
+                                <option value='10'>10시</option>
+                                <option value='11'>11시</option>
+                                <option value='12'>12시</option>
+                                <option value='13'>13시</option>
+                                <option value='14'>14시</option>
+                                <option value='15'>15시</option>
+                                <option value='16'>16시</option>
+                                <option value='17'>17시</option>
+                                <option value='18'>18시</option>
+                            </select>
+                            <p style="color:#6e6e6e;">
+                                평일(월-목) 10시~19시 (관람가능 : 20시)<br>
+                                주말(금-일), 공휴일 10시~21시 (관람가능 : 22시)
+                            </p>
+
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th height="80"><label for="관람인원">관람인원</label></th>
+                        <td>
+                            대인 <input type="number" id="대인인원수" name="대인인원수" value="" placeholder="0" maxlength="3" />
+                            &nbsp&nbsp&nbsp&nbsp&nbsp
+                            청소년 <input type="number" id="청소년인원수" name="청소년인원수" value="" placeholder="0" maxlength="3" />
+                            <p></p>
+                            소인 <input type="number" id="소인인원수" name="소인인원수" value="" placeholder="0" maxlength="3" />
+                            &nbsp&nbsp&nbsp&nbsp&nbsp
+                            인솔교사 <input type="number" id="인솔교사인원수" name="인솔교사인원수" value="" placeholder="0" maxlength="3" />
+
+                            <p style="color:#6e6e6e;">
+                                숫자만 입력하시오 (단, 없을 경우 0으로 입력하시오)
+                            </p>
+                        </td>
+
+
+                    </tr>
+
+
+                    <tr>
+                        <th height="30" width="10"><label for"추가사항">추가사항</label></th>
+                        <td>
+                            <textarea id="추가사항" name="추가사항" rows="20" cols="70"></textarea>
+                        </td>
+                    </tr>
+
+                </table>
+
+                <button type="button" onclick="reservation()" style="color:white; background-color:skyblue; font-size:1.5em; border-radius:0.8em; padding: 5px 20px; ">
+                    예약하기
+                </button>
+            </form>
+
+        </main>
+        <aside class="Right_side"></aside>
+
+    </div>
+
+    <footer class="Footer"></footer>
 </body>
+
 </html>
